@@ -1,0 +1,545 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2017-10-06T06:29:28.382Z",
+	"__export_source": "insomnia.desktop.app:v5.8.3",
+	"resources": [
+		{
+			"_id": "wrk_ebb8948be8a940e68835144fc81e32db",
+			"parentId": null,
+			"modified": 1507029977315,
+			"created": 1506849992105,
+			"name": "YLE API",
+			"description": "# YLE API\n\nThis is a ready-made boilerplate for [YLE API](http://developer.yle.fi/api_docs.html).\n\n## Installation\n\nIn case you do not have API keys yet, register yourself a YLE account and fetch the keys [here](https://tunnus.yle.fi/api-avaimet).\n\nOnce you have the keys, add them to your Insomnia environment as follows:\n\n* appId: The application ID (as generated to you when registering)\n* appKey: The application key (as generated to you when registering)\n\n## Usage\n\nAfter configuring the keys, everything should be set. Execute the queries from top to down, and everything should work out of box.\n\nThe YLE Endpoints have been configured with all available parameters, but only some of them have been activated. Please also note that some of the API calls are interlinked (the request parameters of an API link to responses of a previous API). Such cases should be easy to notice, as the failing linkages are painted in red.\n\n## Notes\n\nThe interlinking between the API calls is done with [JSONPath](http://goessner.net/articles/JsonPath/) - a rich expression language for mining JSON datasets. This should also foreshorten in applying then in practice, as you already know what to pick into your UI from the responses.",
+			"certificates": [],
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_10289c1c3af44c95bef1ff2e2cf646f1",
+			"parentId": "wrk_ebb8948be8a940e68835144fc81e32db",
+			"modified": 1506849992139,
+			"created": 1506849992139,
+			"name": "Base Environment",
+			"data": {},
+			"color": null,
+			"isPrivate": false,
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_2cf6b925cc9b408cb3c9639cbb5090df",
+			"parentId": "wrk_ebb8948be8a940e68835144fc81e32db",
+			"modified": 1506849992128,
+			"created": 1506849992128,
+			"name": "Default Jar",
+			"cookies": [],
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "req_61d9fc7d4b994e1496a85ea93bf77f57",
+			"parentId": "wrk_ebb8948be8a940e68835144fc81e32db",
+			"modified": 1507030026623,
+			"created": 1506850000297,
+			"url": "https://external.api.yle.fi/v1/programs/items.json",
+			"name": "Search programs, clips and episodes",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "app_id",
+					"value": "{{appId}}",
+					"id": "pair_161d4d405df04035a8c2d480c300f798"
+				},
+				{
+					"name": "app_key",
+					"value": "{{ appKey  }}",
+					"id": "pair_0207256ba95f4cc88968488e37dc8300"
+				},
+				{
+					"name": "id",
+					"value": "",
+					"id": "pair_2e83380cb171403ebfea9397321dc9a2"
+				},
+				{
+					"name": "type",
+					"value": "tvcontent",
+					"id": "pair_3161e4ed16384f688ed66b710869a022",
+					"disabled": false
+				},
+				{
+					"name": "q",
+					"value": "Pikku Kakkonen",
+					"id": "pair_5c6854913f0549c49f30d5e3313c87fe",
+					"disabled": false
+				},
+				{
+					"name": "mediaobject",
+					"value": "video",
+					"id": "pair_1563f58e81954052beb9013f536f3341",
+					"disabled": true
+				},
+				{
+					"name": "category",
+					"value": "",
+					"id": "pair_358604faa09f4200b801b49964f72e32",
+					"disabled": true
+				},
+				{
+					"name": "series",
+					"value": "",
+					"id": "pair_83dd55ac2df34a799356af864bad99b1",
+					"disabled": true
+				},
+				{
+					"name": "availability",
+					"value": "ondemand",
+					"id": "pair_7f493728b1e84b64b9cd83205041e040",
+					"disabled": false
+				},
+				{
+					"name": "downloadable",
+					"value": "true",
+					"id": "pair_9b3d72bb304d4ceaaa84ece52e244063",
+					"disabled": true
+				},
+				{
+					"name": "order",
+					"value": "publication.starttime:desc",
+					"id": "pair_0104ff7192434c8abe1be469df8f816c",
+					"type": "text",
+					"multiline": "text/plain"
+				},
+				{
+					"name": "limit",
+					"value": "10",
+					"id": "pair_167f0d9041f54557b05d44babe164aac"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1506850000297,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_81e36af4a0804d2aa8130f40c394fdb4",
+			"parentId": "wrk_ebb8948be8a940e68835144fc81e32db",
+			"modified": 1507030039005,
+			"created": 1506850208110,
+			"url": "https://external.api.yle.fi/v1/programs/categories.json",
+			"name": "Get Categories",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "app_id",
+					"value": "{{appId}}",
+					"id": "pair_161d4d405df04035a8c2d480c300f798"
+				},
+				{
+					"name": "app_key",
+					"value": "{{ appKey  }}",
+					"id": "pair_0207256ba95f4cc88968488e37dc8300"
+				},
+				{
+					"name": "scheme",
+					"value": "areena-content-classification",
+					"id": "pair_34056c38e08543899cb2a0e46f585a2f"
+				},
+				{
+					"name": "limit",
+					"value": "100",
+					"id": "pair_c7ad76a75895496a9335a54e62deecca",
+					"disabled": false
+				},
+				{
+					"name": "offset",
+					"value": "10",
+					"id": "pair_5658e827f7ab495b8a8f987e75c891ca",
+					"disabled": true
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1506768163655.5,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_5e95c53204e74be3a47e3e2b32be985b",
+			"parentId": "wrk_ebb8948be8a940e68835144fc81e32db",
+			"modified": 1507056496821,
+			"created": 1506850617791,
+			"url": "https://external.api.yle.fi/v1/programs/services.json",
+			"name": "Get Services",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "app_id",
+					"value": "{{appId}}",
+					"id": "pair_161d4d405df04035a8c2d480c300f798"
+				},
+				{
+					"name": "app_key",
+					"value": "{{ appKey  }}",
+					"id": "pair_0207256ba95f4cc88968488e37dc8300"
+				},
+				{
+					"name": "type",
+					"value": "TVChannel",
+					"id": "pair_34056c38e08543899cb2a0e46f585a2f",
+					"disabled": false
+				},
+				{
+					"name": "limit",
+					"value": "10",
+					"id": "pair_c7ad76a75895496a9335a54e62deecca",
+					"disabled": true
+				},
+				{
+					"name": "offset",
+					"value": "10",
+					"id": "pair_5658e827f7ab495b8a8f987e75c891ca",
+					"disabled": true
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1506727245334.75,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_112b3f2e88264d7086671ab4b2dd2837",
+			"parentId": "wrk_ebb8948be8a940e68835144fc81e32db",
+			"modified": 1507030052485,
+			"created": 1506850661229,
+			"url": "https://external.api.yle.fi/v1/programs/services/{% response 'body', 'req_5e95c53204e74be3a47e3e2b32be985b', '$.data[0].id' %}.json",
+			"name": "Get a Service",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "app_id",
+					"value": "{{appId}}",
+					"id": "pair_161d4d405df04035a8c2d480c300f798"
+				},
+				{
+					"name": "app_key",
+					"value": "{{ appKey  }}",
+					"id": "pair_0207256ba95f4cc88968488e37dc8300"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1506706786174.375,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_cc99eee7f1634551a25ee46fd9161932",
+			"parentId": "wrk_ebb8948be8a940e68835144fc81e32db",
+			"modified": 1507032326465,
+			"created": 1506851726191,
+			"url": "https://external.api.yle.fi/v1/programs/schedules.json",
+			"name": "Get Program Schedules",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "app_id",
+					"value": "{{appId}}",
+					"id": "pair_161d4d405df04035a8c2d480c300f798"
+				},
+				{
+					"name": "app_key",
+					"value": "{{ appKey  }}",
+					"id": "pair_0207256ba95f4cc88968488e37dc8300"
+				},
+				{
+					"name": "service",
+					"value": "yle-areena",
+					"id": "pair_69ae2591b4ad443491287c45fe3c6bdd",
+					"disabled": true
+				},
+				{
+					"name": "mediaobject",
+					"value": "video",
+					"id": "pair_c5882c1bb36040b19a87a8505bc65259",
+					"disabled": false
+				},
+				{
+					"name": "starttime",
+					"value": "2017-10-04T14:00:00.000+0200",
+					"id": "pair_d30694860316438786d4142b57d7310c",
+					"disabled": false
+				},
+				{
+					"name": "endtime",
+					"value": "2017-10-10T18:00:00.000+0200",
+					"id": "pair_e62b2537f4044f55a4cd7c25d3bf2a9f",
+					"disabled": false
+				},
+				{
+					"name": "category",
+					"value": "5-141",
+					"id": "pair_dc815822b403477e9ceb348cc6e03c55",
+					"disabled": true
+				},
+				{
+					"name": "region",
+					"value": "fi",
+					"id": "pair_abe302d069c648a198e26827b72634c0"
+				},
+				{
+					"name": "id",
+					"value": "4-6956121,4-7110167",
+					"id": "pair_7671194e60264f99aff2bb93f66055a3"
+				},
+				{
+					"name": "series",
+					"value": "",
+					"id": "pair_d049b7a3ad4144b296d6a07e094d0f9e",
+					"disabled": true
+				},
+				{
+					"name": "limit",
+					"value": "10",
+					"id": "pair_420987b5484d4462867ea19f324e21d0",
+					"disabled": true
+				},
+				{
+					"name": "offset",
+					"value": "10",
+					"id": "pair_f666338550cd47f497d2c43dfaf07845",
+					"disabled": true
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1506696556594.1875,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_8a099a5412fe496fa04f648772295a3a",
+			"parentId": "wrk_ebb8948be8a940e68835144fc81e32db",
+			"modified": 1507030035783,
+			"created": 1506851834410,
+			"url": "https://external.api.yle.fi/v1/programs/items/{% response 'body', 'req_61d9fc7d4b994e1496a85ea93bf77f57', '$.data[0].id' %}.json",
+			"name": "Get a single program, clip or episode",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "app_id",
+					"value": "{{appId}}",
+					"id": "pair_161d4d405df04035a8c2d480c300f798"
+				},
+				{
+					"name": "app_key",
+					"value": "{{ appKey  }}",
+					"id": "pair_0207256ba95f4cc88968488e37dc8300"
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1506809081976.25,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_7e5f15df53ff4b7b93d9ddfe9973db69",
+			"parentId": "wrk_ebb8948be8a940e68835144fc81e32db",
+			"modified": 1507229832522,
+			"created": 1506852775466,
+			"url": "https://external.api.yle.fi/v1/programs/schedules/now.json",
+			"name": "Get the Current Broadcast",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "app_id",
+					"value": "{{appId}}",
+					"id": "pair_161d4d405df04035a8c2d480c300f798"
+				},
+				{
+					"name": "app_key",
+					"value": "{{ appKey  }}",
+					"id": "pair_0207256ba95f4cc88968488e37dc8300"
+				},
+				{
+					"name": "service",
+					"value": "yle-tv1",
+					"id": "pair_69ae2591b4ad443491287c45fe3c6bdd",
+					"disabled": false
+				},
+				{
+					"name": "start",
+					"value": "-1",
+					"id": "pair_7671194e60264f99aff2bb93f66055a3",
+					"disabled": false
+				},
+				{
+					"name": "end",
+					"value": "10",
+					"id": "pair_d049b7a3ad4144b296d6a07e094d0f9e",
+					"disabled": false
+				},
+				{
+					"name": "mediaobject",
+					"value": "video",
+					"id": "pair_d8fd005ff1e848f7ab034e2cc4563583",
+					"disabled": true
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1506691441804.0938,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_e90a8145d978447986757b00f953d638",
+			"parentId": "wrk_ebb8948be8a940e68835144fc81e32db",
+			"modified": 1507223509778,
+			"created": 1506852929193,
+			"url": "https://external.api.yle.fi/v1/programs/nowplaying/{% response 'body', 'req_112b3f2e88264d7086671ab4b2dd2837', '$.data.id' %}.json",
+			"name": "Get the Current Broadcast (Copy)",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "app_id",
+					"value": "{{appId}}",
+					"id": "pair_161d4d405df04035a8c2d480c300f798"
+				},
+				{
+					"name": "app_key",
+					"value": "{{ appKey  }}",
+					"id": "pair_0207256ba95f4cc88968488e37dc8300"
+				},
+				{
+					"name": "start",
+					"value": "-1",
+					"id": "pair_7671194e60264f99aff2bb93f66055a3",
+					"disabled": true
+				},
+				{
+					"name": "end",
+					"value": "1",
+					"id": "pair_d049b7a3ad4144b296d6a07e094d0f9e",
+					"disabled": true
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1506688884409.0469,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "req_dfde625d75d6497db0a72e445bff1e30",
+			"parentId": "wrk_ebb8948be8a940e68835144fc81e32db",
+			"modified": 1507030064512,
+			"created": 1506853319402,
+			"url": "https://external.api.yle.fi/v1/media/playouts.json",
+			"name": "Retrieving Stream URL for OnDemand program",
+			"description": "",
+			"method": "GET",
+			"body": {},
+			"parameters": [
+				{
+					"name": "app_id",
+					"value": "{{appId}}",
+					"id": "pair_e5ea9045eca948ba85cf9a9d53f6554d"
+				},
+				{
+					"name": "app_key",
+					"value": "{{ appKey  }}",
+					"id": "pair_97a9f64789ef44588be4b301c269769f"
+				},
+				{
+					"name": "program_id",
+					"value": "{% response 'body', 'req_8a099a5412fe496fa04f648772295a3a', '$.data.id' %}",
+					"id": "pair_161d4d405df04035a8c2d480c300f798"
+				},
+				{
+					"name": "media_id",
+					"value": "{% response 'body', 'req_8a099a5412fe496fa04f648772295a3a', '$.data.publicationEvent[?(@.temporalStatus == \\'currently\\' && @.type == \\'OnDemandPublication\\')].media.id' %}",
+					"id": "pair_0207256ba95f4cc88968488e37dc8300",
+					"disabled": false
+				},
+				{
+					"name": "protocol",
+					"value": "HLS",
+					"id": "pair_7671194e60264f99aff2bb93f66055a3",
+					"disabled": false
+				},
+				{
+					"name": "hardsubtitles",
+					"value": "",
+					"id": "pair_b4792509350f4a368db2981266704de7",
+					"disabled": true
+				},
+				{
+					"name": "multibitrate",
+					"value": "",
+					"id": "pair_223317529e3640ba8d9251a3d7743dd6",
+					"disabled": true
+				}
+			],
+			"headers": [],
+			"authentication": {},
+			"metaSortKey": -1506687605711.5234,
+			"settingStoreCookies": true,
+			"settingSendCookies": true,
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"_type": "request"
+		},
+		{
+			"_id": "env_a1007b0c30aa4aca832f6cf3a4da8397",
+			"parentId": "env_10289c1c3af44c95bef1ff2e2cf646f1",
+			"modified": 1507271312907,
+			"created": 1507029110028,
+			"name": "YLE API",
+			"data": {},
+			"color": null,
+			"isPrivate": false,
+			"_type": "environment"
+		}
+	]
+}
